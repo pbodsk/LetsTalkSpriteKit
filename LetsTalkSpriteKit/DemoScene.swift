@@ -25,6 +25,8 @@ class DemoScene: SKScene {
     override func didMoveToView(view: SKView) {
         self.backgroundColor = UIColor.blackColor()
         addCenterTextToView(view)
+        addBackgroundBarsToView(view)
+        
     }
     
     //MARK: - Game loop
@@ -44,9 +46,12 @@ class DemoScene: SKScene {
     }
 
     //MARK: - Adding of the different elements of our demo
+    
+    //MARK: - Center text
     func addCenterTextToView(view: SKView) {
         centerTextNode.text = "Pretty boring!"
         centerTextNode.position = CGPoint(x: CGRectGetMidX(view.frame), y: CGRectGetMidY(view.frame))
+        centerTextNode.zPosition = 20
         self.addChild(centerTextNode)
         
         bounceCenterText()
@@ -74,7 +79,13 @@ class DemoScene: SKScene {
         if centerTextNode.position.x < CGRectGetMinX(self.frame) - centerTextNode.frame.size.width / 2 {
             centerTextNode.position.x = CGRectGetMaxX(self.frame) + centerTextNode.frame.size.width / 2
         }
-        
+    }
+    
+    //MARK: - Background Bars
+    func addBackgroundBarsToView(view: SKView) {
+        let backgroundNode = BackgroundNode()
+        backgroundNode.createBouncingBarsInView(view)
+        self.addChild(backgroundNode)
     }
     
     /* Not used in this demo

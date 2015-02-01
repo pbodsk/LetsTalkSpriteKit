@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0ADC8711A7EB9A8003390E2 /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */; };
 		D0D000F21A7CF17500E36311 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D000F11A7CF17500E36311 /* AppDelegate.swift */; };
 		D0D000F41A7CF17500E36311 /* DemoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D0D000F31A7CF17500E36311 /* DemoScene.sks */; };
 		D0D000F61A7CF17500E36311 /* DemoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D000F51A7CF17500E36311 /* DemoScene.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		D0D000EC1A7CF17500E36311 /* LetsTalkSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsTalkSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D000F01A7CF17500E36311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0D000F11A7CF17500E36311 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				D0D000FC1A7CF17500E36311 /* Images.xcassets */,
 				D0D000FE1A7CF17500E36311 /* LaunchScreen.xib */,
 				D0D000EF1A7CF17500E36311 /* Supporting Files */,
+				D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */,
 			);
 			path = LetsTalkSpriteKit;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D000F61A7CF17500E36311 /* DemoScene.swift in Sources */,
+				D0ADC8711A7EB9A8003390E2 /* BackgroundNode.swift in Sources */,
 				D0D000F81A7CF17500E36311 /* DemoViewController.swift in Sources */,
 				D0D000F21A7CF17500E36311 /* AppDelegate.swift in Sources */,
 			);
@@ -413,6 +417,7 @@
 				D0D001111A7CF17500E36311 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0D001121A7CF17500E36311 /* Build configuration list for PBXNativeTarget "LetsTalkSpriteKitTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				D0D001141A7CF17500E36311 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
