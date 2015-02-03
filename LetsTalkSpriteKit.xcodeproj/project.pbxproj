@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0646C881A816233009CC3E3 /* EmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0646C871A816233009CC3E3 /* EmitterNode.swift */; };
+		D0646C8C1A816371009CC3E3 /* starField.sks in Resources */ = {isa = PBXBuildFile; fileRef = D0646C8A1A816371009CC3E3 /* starField.sks */; };
+		D0646C8D1A816371009CC3E3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D0646C8B1A816371009CC3E3 /* spark.png */; };
 		D0ADC8711A7EB9A8003390E2 /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */; };
 		D0D000F21A7CF17500E36311 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D000F11A7CF17500E36311 /* AppDelegate.swift */; };
 		D0D000F41A7CF17500E36311 /* DemoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D0D000F31A7CF17500E36311 /* DemoScene.sks */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0646C871A816233009CC3E3 /* EmitterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterNode.swift; sourceTree = "<group>"; };
+		D0646C8A1A816371009CC3E3 /* starField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starField.sks; sourceTree = "<group>"; };
+		D0646C8B1A816371009CC3E3 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		D0D000EC1A7CF17500E36311 /* LetsTalkSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsTalkSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D000F01A7CF17500E36311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0646C891A816330009CC3E3 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				D0646C8A1A816371009CC3E3 /* starField.sks */,
+				D0646C8B1A816371009CC3E3 /* spark.png */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
 		D0D000E31A7CF17500E36311 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,7 @@
 		D0D000EE1A7CF17500E36311 /* LetsTalkSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				D0646C891A816330009CC3E3 /* Particles */,
 				D0D000F11A7CF17500E36311 /* AppDelegate.swift */,
 				D0D000F31A7CF17500E36311 /* DemoScene.sks */,
 				D0D000F51A7CF17500E36311 /* DemoScene.swift */,
@@ -92,6 +108,7 @@
 				D0D000FE1A7CF17500E36311 /* LaunchScreen.xib */,
 				D0D000EF1A7CF17500E36311 /* Supporting Files */,
 				D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */,
+				D0646C871A816233009CC3E3 /* EmitterNode.swift */,
 			);
 			path = LetsTalkSpriteKit;
 			sourceTree = "<group>";
@@ -202,8 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D001001A7CF17500E36311 /* LaunchScreen.xib in Resources */,
+				D0646C8D1A816371009CC3E3 /* spark.png in Resources */,
 				D0D000FD1A7CF17500E36311 /* Images.xcassets in Resources */,
 				D0D000F41A7CF17500E36311 /* DemoScene.sks in Resources */,
+				D0646C8C1A816371009CC3E3 /* starField.sks in Resources */,
 				D0D000FB1A7CF17500E36311 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +244,7 @@
 				D0D000F61A7CF17500E36311 /* DemoScene.swift in Sources */,
 				D0ADC8711A7EB9A8003390E2 /* BackgroundNode.swift in Sources */,
 				D0D000F81A7CF17500E36311 /* DemoViewController.swift in Sources */,
+				D0646C881A816233009CC3E3 /* EmitterNode.swift in Sources */,
 				D0D000F21A7CF17500E36311 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

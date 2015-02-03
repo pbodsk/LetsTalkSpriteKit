@@ -9,6 +9,8 @@
 import SpriteKit
 
 class BackgroundNode: SKSpriteNode {
+    
+    let alphaValue: CGFloat = 0.6
 
     let greenBar: SKSpriteNode = SKSpriteNode(color: UIColor.greenColor(), size: CGSizeZero)
     let blueBar: SKSpriteNode = SKSpriteNode(color: UIColor.blueColor(), size: CGSizeZero)
@@ -21,23 +23,26 @@ class BackgroundNode: SKSpriteNode {
         greenBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 100.0)
         greenBar.size = barSize
         greenBar.zPosition = 10
+        greenBar.alpha = alphaValue
         self.addChild(greenBar)
         
         blueBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 150.0)
         blueBar.size = barSize
         blueBar.zPosition = 11
+        blueBar.alpha = alphaValue
         self.addChild(blueBar)
         
         
         yellowBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 200.0)
         yellowBar.size = barSize
         yellowBar.zPosition = 12
+        yellowBar.alpha = alphaValue
         self.addChild(yellowBar)
         
         redBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 250.0)
         redBar.size = barSize
         redBar.zPosition = 13
-
+        redBar.alpha = alphaValue
         self.addChild(redBar)
         
         self.bounceAndBlinkLikeAManiacInView(view)
@@ -49,8 +54,8 @@ class BackgroundNode: SKSpriteNode {
         CGPathAddLineToPoint(barPath, nil, CGRectGetMinX(view.frame), 100)
         CGPathCloseSubpath(barPath)
         let barPathAction = SKAction.followPath(barPath, duration: 2.0)
-        let barHide = SKAction.fadeOutWithDuration(1.0)
-        let barShow = SKAction.fadeInWithDuration(1.0)
+        let barHide = SKAction.fadeAlphaTo(0.0, duration: 1.0)
+        let barShow = SKAction.fadeAlphaTo(alphaValue, duration: 1.0)
         let greenBarSequence = SKAction.sequence([barHide, barShow])
         let barPathActionForever = SKAction.repeatActionForever(barPathAction)
         let greenBarHideShowForever = SKAction.repeatActionForever(greenBarSequence)

@@ -26,6 +26,7 @@ class DemoScene: SKScene {
         self.backgroundColor = UIColor.blackColor()
         addCenterTextToView(view)
         addBackgroundBarsToView(view)
+        addStarfieldToView(view)
         
     }
     
@@ -86,6 +87,13 @@ class DemoScene: SKScene {
         let backgroundNode = BackgroundNode()
         backgroundNode.createBouncingBarsInView(view)
         self.addChild(backgroundNode)
+    }
+    
+    //MARK: - Starfield....yay!!
+    func addStarfieldToView(view: SKView){
+        let emitterNode = EmitterNode()
+        emitterNode.createStarfieldInView(view)
+        self.addChild(emitterNode)
     }
     
     /* Not used in this demo
