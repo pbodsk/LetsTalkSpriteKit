@@ -20,61 +20,75 @@ class BackgroundNode: SKSpriteNode {
     func createBouncingBarsInView(view: SKView) {
         
         let barSize = CGSize(width: view.frame.width, height: 20)
-        greenBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 100.0)
+        greenBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 50.0)
         greenBar.size = barSize
         greenBar.zPosition = 10
         greenBar.alpha = alphaValue
         self.addChild(greenBar)
-        
-        blueBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 150.0)
+
+        blueBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 100.0)
         blueBar.size = barSize
         blueBar.zPosition = 11
         blueBar.alpha = alphaValue
         self.addChild(blueBar)
-        
-        
-        yellowBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 200.0)
+
+        yellowBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 150.0)
         yellowBar.size = barSize
         yellowBar.zPosition = 12
         yellowBar.alpha = alphaValue
         self.addChild(yellowBar)
         
-        redBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 250.0)
+        redBar.position = CGPoint(x: CGRectGetMidX(view.frame), y: 200.0)
         redBar.size = barSize
         redBar.zPosition = 13
         redBar.alpha = alphaValue
         self.addChild(redBar)
-        
+
         self.bounceAndBlinkLikeAManiacInView(view)
     }
     
     func bounceAndBlinkLikeAManiacInView(view: SKView) {
-        let barPath = CGPathCreateMutable()
-        CGPathMoveToPoint(barPath, nil, CGRectGetMinX(view.frame), CGRectGetMinY(view.frame))
-        CGPathAddLineToPoint(barPath, nil, CGRectGetMinX(view.frame), 100)
-        CGPathCloseSubpath(barPath)
-        let barPathAction = SKAction.followPath(barPath, duration: 2.0)
-        let barHide = SKAction.fadeAlphaTo(0.0, duration: 1.0)
-        let barShow = SKAction.fadeAlphaTo(alphaValue, duration: 1.0)
-        let greenBarSequence = SKAction.sequence([barHide, barShow])
+        let greenBarPath = self.createPathWithStartPoint(greenBar.position.y, inView: view)
+        let greenBarBounce = self.createForeverBouncingActionWithPath(greenBarPath)
+        greenBar.runAction(greenBarBounce)
+ //       greenBar.runAction(self.createShowHideForeverAction())
+
+        let blueBarPath = self.createPathWithStartPoint(blueBar.position.y, inView: view)
+        let blueBarBounce = self.createForeverBouncingActionWithPath(blueBarPath)
+        blueBar.runAction(blueBarBounce)
+ //       blueBar.runAction(self.createShowHideForeverAction())
+
+        let yellowBarPath = self.createPathWithStartPoint(yellowBar.position.y, inView: view)
+        let yellowBarBounce = self.createForeverBouncingActionWithPath(yellowBarPath)
+        yellowBar.runAction(yellowBarBounce)
+ //       yellowBar.runAction(self.createShowHideForeverAction())
+
+        let redBarPath = self.createPathWithStartPoint(redBar.position.y, inView: view)
+        let redBarBounce = self.createForeverBouncingActionWithPath(redBarPath)
+        redBar.runAction(redBarBounce)
+ //       redBar.runAction(self.createShowHideForeverAction())
+    }
+    
+    func createPathWithStartPoint(startPoint: CGFloat, inView view:SKView) -> CGPathRef {
+        let path = CGPathCreateMutable()
+        CGPathMoveToPoint(path, nil, CGRectGetMidX(view.frame), startPoint)
+        CGPathAddLineToPoint(path, nil, CGRectGetMidX(view.frame), CGRectGetMinY(view.frame))
+        CGPathAddLineToPoint(path, nil, CGRectGetMidX(view.frame), CGRectGetMaxY(view.frame))
+        CGPathCloseSubpath(path)
+        return path
+    }
+    
+    func createForeverBouncingActionWithPath(path: CGPathRef) -> SKAction {
+        let barPathAction = SKAction.followPath(path, asOffset: false, orientToPath: false, duration: 2.0)
         let barPathActionForever = SKAction.repeatActionForever(barPathAction)
-        let greenBarHideShowForever = SKAction.repeatActionForever(greenBarSequence)
-        greenBar.runAction(barPathActionForever)
-        greenBar.runAction(greenBarHideShowForever)
-        
-        blueBar.runAction(barPathActionForever)
-        let blueBarSequence = SKAction.sequence([SKAction.waitForDuration(1.0), barHide, barShow])
-        let blueBarHideShowForever = SKAction.repeatActionForever(blueBarSequence)
-        blueBar.runAction(blueBarHideShowForever)
-
-        yellowBar.runAction(barPathActionForever)
-        let yellowBarSequence = SKAction.sequence([SKAction.waitForDuration(1.5), barHide, barShow])
-        let yellowBarHideShowForever = SKAction.repeatActionForever(yellowBarSequence)
-        yellowBar.runAction(yellowBarHideShowForever)
-
-        redBar.runAction(barPathActionForever)
-        let redBarSequence = SKAction.sequence([SKAction.waitForDuration(2.0), barHide, barShow])
-        let redBarHideShowForever = SKAction.repeatActionForever(redBarSequence)
-        redBar.runAction(redBarHideShowForever)
+        return barPathActionForever
+    }
+    
+    func createShowHideForeverAction() -> SKAction {
+        let barHide = SKAction.fadeAlphaTo(0.0, duration: 5.0)
+        let barShow = SKAction.fadeAlphaTo(alphaValue, duration: 5.0)
+        let barSequence = SKAction.sequence([barHide, barShow])
+        let barHideShowForever = SKAction.repeatActionForever(barSequence)
+        return barHideShowForever
     }
 }

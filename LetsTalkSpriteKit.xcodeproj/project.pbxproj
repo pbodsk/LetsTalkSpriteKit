@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D05F61D61A840D1E0056008D /* shader.fsv in Resources */ = {isa = PBXBuildFile; fileRef = D05F61D51A840D1E0056008D /* shader.fsv */; };
 		D0646C881A816233009CC3E3 /* EmitterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0646C871A816233009CC3E3 /* EmitterNode.swift */; };
 		D0646C8C1A816371009CC3E3 /* starField.sks in Resources */ = {isa = PBXBuildFile; fileRef = D0646C8A1A816371009CC3E3 /* starField.sks */; };
 		D0646C8D1A816371009CC3E3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D0646C8B1A816371009CC3E3 /* spark.png */; };
+		D0646C8F1A816C11009CC3E3 /* Operation_Stealth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D0646C8E1A816C11009CC3E3 /* Operation_Stealth.mp3 */; };
 		D0ADC8711A7EB9A8003390E2 /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */; };
 		D0D000F21A7CF17500E36311 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D000F11A7CF17500E36311 /* AppDelegate.swift */; };
 		D0D000F41A7CF17500E36311 /* DemoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D0D000F31A7CF17500E36311 /* DemoScene.sks */; };
@@ -32,9 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D05F61D51A840D1E0056008D /* shader.fsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.fsv; sourceTree = "<group>"; };
 		D0646C871A816233009CC3E3 /* EmitterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterNode.swift; sourceTree = "<group>"; };
 		D0646C8A1A816371009CC3E3 /* starField.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starField.sks; sourceTree = "<group>"; };
 		D0646C8B1A816371009CC3E3 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		D0646C8E1A816C11009CC3E3 /* Operation_Stealth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Operation_Stealth.mp3; sourceTree = "<group>"; };
 		D0ADC8701A7EB9A8003390E2 /* BackgroundNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		D0D000EC1A7CF17500E36311 /* LetsTalkSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsTalkSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D000F01A7CF17500E36311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D05F61D41A840CFA0056008D /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				D05F61D51A840D1E0056008D /* shader.fsv */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		D0646C891A816330009CC3E3 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 		D0D000EE1A7CF17500E36311 /* LetsTalkSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				D05F61D41A840CFA0056008D /* Shaders */,
 				D0646C891A816330009CC3E3 /* Particles */,
 				D0D000F11A7CF17500E36311 /* AppDelegate.swift */,
 				D0D000F31A7CF17500E36311 /* DemoScene.sks */,
@@ -116,6 +129,7 @@
 		D0D000EF1A7CF17500E36311 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0646C8E1A816C11009CC3E3 /* Operation_Stealth.mp3 */,
 				D0D000F01A7CF17500E36311 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -224,6 +238,8 @@
 				D0D000F41A7CF17500E36311 /* DemoScene.sks in Resources */,
 				D0646C8C1A816371009CC3E3 /* starField.sks in Resources */,
 				D0D000FB1A7CF17500E36311 /* Main.storyboard in Resources */,
+				D05F61D61A840D1E0056008D /* shader.fsv in Resources */,
+				D0646C8F1A816C11009CC3E3 /* Operation_Stealth.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
