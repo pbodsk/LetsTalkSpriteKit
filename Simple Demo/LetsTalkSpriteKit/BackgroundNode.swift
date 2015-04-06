@@ -48,25 +48,21 @@ class BackgroundNode: SKSpriteNode {
     }
     
     func bounceAndBlinkLikeAManiacInView(view: SKView) {
-        let greenBarPath = self.createPathWithStartPoint(greenBar.position.y, inView: view)
-        let greenBarBounce = self.createForeverBouncingActionWithPath(greenBarPath)
+        let greenBarPath = createPathWithStartPoint(greenBar.position.y, inView: view)
+        let greenBarBounce = createForeverBouncingActionWithPath(greenBarPath)
         greenBar.runAction(greenBarBounce)
- //       greenBar.runAction(self.createShowHideForeverAction())
 
-        let blueBarPath = self.createPathWithStartPoint(blueBar.position.y, inView: view)
-        let blueBarBounce = self.createForeverBouncingActionWithPath(blueBarPath)
+        let blueBarPath = createPathWithStartPoint(blueBar.position.y, inView: view)
+        let blueBarBounce = createForeverBouncingActionWithPath(blueBarPath)
         blueBar.runAction(blueBarBounce)
- //       blueBar.runAction(self.createShowHideForeverAction())
 
-        let yellowBarPath = self.createPathWithStartPoint(yellowBar.position.y, inView: view)
-        let yellowBarBounce = self.createForeverBouncingActionWithPath(yellowBarPath)
+        let yellowBarPath = createPathWithStartPoint(yellowBar.position.y, inView: view)
+        let yellowBarBounce = createForeverBouncingActionWithPath(yellowBarPath)
         yellowBar.runAction(yellowBarBounce)
- //       yellowBar.runAction(self.createShowHideForeverAction())
 
-        let redBarPath = self.createPathWithStartPoint(redBar.position.y, inView: view)
-        let redBarBounce = self.createForeverBouncingActionWithPath(redBarPath)
+        let redBarPath = createPathWithStartPoint(redBar.position.y, inView: view)
+        let redBarBounce = createForeverBouncingActionWithPath(redBarPath)
         redBar.runAction(redBarBounce)
- //       redBar.runAction(self.createShowHideForeverAction())
     }
     
     func createPathWithStartPoint(startPoint: CGFloat, inView view:SKView) -> CGPathRef {

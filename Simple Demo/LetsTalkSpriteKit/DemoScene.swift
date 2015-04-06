@@ -28,19 +28,13 @@ class DemoScene: SKScene {
         addBackgroundBarsToView(view)
         addStarfieldToView(view)
         
-        /*
-        let shaderNode = SKSpriteNode(color: UIColor.redColor(), size: CGSize(width: 100.0, height: 100.0))
-        shaderNode.position = CGPoint(x: 100.0, y: 100.0)
-        let shader = SKShader(fileNamed: "shader.fsv")
-        shaderNode.shader = shader
-        self.addChild(shaderNode)
-        */
-//        let music = SKAction.playSoundFileNamed("Operation_Stealth.mp3", waitForCompletion: false)
-//        self.runAction(music)
+        let music = SKAction.playSoundFileNamed("Operation_Stealth.mp3", waitForCompletion: false)
+        self.runAction(music)
         
     }
     
     //MARK: - Game loop
+
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
