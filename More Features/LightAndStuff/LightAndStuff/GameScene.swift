@@ -29,7 +29,7 @@ class GameScene: SKScene {
         self.addChild(sprite)
         
         light.name = "light"
-        light.position = CGPoint(x: 10, y: 10)
+        light.position = CGPoint(x: CGRectGetMidX(CGRectFrame), y: CGRectGetMaxY(CGRectFrame) - 50)
         light.categoryBitMask = 1
         //light.falloff = 10.5
         light.zPosition = 1
@@ -55,7 +55,7 @@ class GameScene: SKScene {
     }
     
     func moveLight() {
-        let moveAction = SKAction.moveBy(CGVector(dx: 500, dy: 500), duration: 2)
+        let moveAction = SKAction.moveBy(CGVector(dx: 0, dy: -500), duration: 2)
         let moveBackAction = moveAction.reversedAction()
         let moveForever = SKAction.repeatActionForever(SKAction.sequence([moveAction, moveBackAction]))
         light.runAction(moveForever)
