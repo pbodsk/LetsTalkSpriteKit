@@ -12,7 +12,7 @@ class EmitterNode: SKNode {
     
     func createStarfieldInView(view: SKView) {
         let starFieldPath = NSBundle.mainBundle().pathForResource("starField", ofType: "sks")
-        let starfield = NSKeyedUnarchiver.unarchiveObjectWithFile(starFieldPath!) as SKEmitterNode
+        let starfield = NSKeyedUnarchiver.unarchiveObjectWithFile(starFieldPath!) as! SKEmitterNode
         starfield.position = CGPointMake(CGRectGetMinX(view.frame), CGRectGetMidY(view.frame))
         self.zPosition = 0
         self.addChild(starfield)

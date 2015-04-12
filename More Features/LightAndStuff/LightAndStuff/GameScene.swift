@@ -35,7 +35,7 @@ class GameScene: SKScene {
         light.zPosition = 1
         light.ambientColor = NSColor.blueColor()
         light.lightColor = NSColor.redColor()
-        light.shadowColor = NSColor(calibratedRed: 0.4, green: 0.3, blue: 0.2, alpha: 1.0)
+        light.shadowColor = NSColor(calibratedRed: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
         light.enabled = false
         
         self.addChild(light)
@@ -44,7 +44,7 @@ class GameScene: SKScene {
         lightButton.fontName = "Impact"
         self.addChild(lightButton)
         
-        lightMovementButton.position = CGPoint(x: CGRectGetMidX(CGRectFrame), y: CGRectGetMinY(CGRectFrame) + 50)
+        lightMovementButton.position = CGPoint(x: CGRectGetMidX(CGRectFrame), y: CGRectGetMaxY(CGRectFrame) - 150)
         lightMovementButton.fontName = "Impact"
         self.addChild(lightMovementButton)
 
