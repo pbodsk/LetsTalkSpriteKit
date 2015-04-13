@@ -67,7 +67,6 @@ class DemoScene: SKScene {
         let centerPosition = CGRectGetMidY(self.frame)
         let top = centerPosition + 100
         let bottom = centerPosition - 100
-        
         let goingUp = SKAction.moveToY(top, duration: 0.5)
         let centering = SKAction.moveToY(centerPosition, duration: 0.5)
         let goingDown = SKAction.moveToY(bottom, duration: 0.5)
@@ -79,7 +78,6 @@ class DemoScene: SKScene {
     
     //MARK: - Updating text position from update method
     func scrollCenterTextHorisontally(scrollDistance: CGFloat) {
-        //centerTextNode.text = "Yay! We're moving!"
         centerTextNode.position.x -= scrollDistance
         if centerTextNode.position.x < CGRectGetMinX(self.frame) - centerTextNode.frame.size.width / 2 {
             centerTextNode.position.x = CGRectGetMaxX(self.frame) + centerTextNode.frame.size.width / 2

@@ -28,10 +28,10 @@ class GameScene: SKScene {
         
         self.addChild(sprite)
         
+        //LIGHT
         light.name = "light"
         light.position = CGPoint(x: CGRectGetMidX(CGRectFrame), y: CGRectGetMaxY(CGRectFrame) - 50)
         light.categoryBitMask = 1
-        //light.falloff = 10.5
         light.zPosition = 1
         light.ambientColor = NSColor.blueColor()
         light.lightColor = NSColor.redColor()
