@@ -12,7 +12,7 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-   //     println("Scene.size: \(self.size)")
+ //       println("Scene.size: \(self.size)")
         
         let sprite = SKSpriteNode(imageNamed:"Spaceship")
         sprite.xScale = 0.5

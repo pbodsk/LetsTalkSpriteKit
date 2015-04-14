@@ -10,27 +10,18 @@
 import SpriteKit
 
 class DemoScene: SKScene {
-    var centerTextNode: SKLabelNode
+    var centerTextNode = SKLabelNode(fontNamed: "AmericanTypewriter-CondensedBold")
     
     //Used for calculating the distance we must move on each update tick
     var lastUpdateTimeInterval = CFTimeInterval(0)
     var distanceToMove: CGFloat = 250
 
-    
-    required init?(coder aDecoder: NSCoder) {
-        centerTextNode = SKLabelNode(fontNamed: "AmericanTypewriter-CondensedBold")
-        super.init(coder: aDecoder)
-    }
-
     override func didMoveToView(view: SKView) {
         self.backgroundColor = UIColor.blackColor()
         addCenterTextToView(view)
-        addBackgroundBarsToView(view)
-        addStarfieldToView(view)
-        
-        let music = SKAction.playSoundFileNamed("Operation_Stealth.mp3", waitForCompletion: false)
-        self.runAction(music)
-        
+  //      addBackgroundBarsToView(view)
+  //      addStarfieldToView(view)
+  //      playMusic()
     }
     
     //MARK: - Game loop
@@ -46,7 +37,7 @@ class DemoScene: SKScene {
         }
         
         var scrollDistance = CGFloat(timeSinceLast) * distanceToMove
-        scrollCenterTextHorisontally(scrollDistance)
+//        scrollCenterTextHorisontally(scrollDistance)
 
     }
 
@@ -59,7 +50,7 @@ class DemoScene: SKScene {
         centerTextNode.zPosition = 20
         self.addChild(centerTextNode)
         
-        bounceCenterText()
+        //bounceCenterText()
     }
     
     func bounceCenterText() {
@@ -96,6 +87,12 @@ class DemoScene: SKScene {
         let emitterNode = EmitterNode()
         emitterNode.createStarfieldInView(view)
         self.addChild(emitterNode)
+    }
+    
+    //MARK: - Play that funky music
+    func playMusic() {
+        let music = SKAction.playSoundFileNamed("Operation_Stealth.mp3", waitForCompletion: false)
+        self.runAction(music)
     }
     
     /* Not used in this demo
